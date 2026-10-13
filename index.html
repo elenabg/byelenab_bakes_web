@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>byElenaB — Pasteles para celebrar en Monterrey</title>
+<meta name="description" content="Pasteles hechos a mano y cositas dulces para tus momentos especiales. Horneados por pedido en Monterrey.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf6f0;--alt:#f3e2e0;--ink:#3a2a2e;--soft:#7d6a6d;--wine:#7a3347;--line:#e3d3cf;--card:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241a1c;--alt:#33242a;--ink:#f4e8e6;--soft:#c4abae;--wine:#7a3347;--line:#4b3a3e;--card:#2d2024}}
+:root[data-theme="dark"]{--bg:#241a1c;--alt:#33242a;--ink:#f4e8e6;--soft:#c4abae;--wine:#7a3347;--line:#4b3a3e;--card:#2d2024}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "DM Sans",system-ui,sans-serif}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.08;margin:0}
+em{font-style:italic;color:var(--wine)}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin:0 0 14px}
+.script{font:italic 500 19px "Cormorant Garamond",Georgia,serif;color:var(--wine)}
+a{color:inherit}a:focus-visible,button:focus-visible,summary:focus-visible,textarea:focus-visible{outline:3px solid var(--wine);outline-offset:3px}
+.btn{display:inline-block;background:var(--wine);color:#fff;text-decoration:none;padding:14px 26px;font-size:14px;font-weight:500;border:1px solid var(--wine);cursor:pointer;font-family:inherit}
+.btn.o{background:none;color:var(--ink);border-color:var(--wine);padding:10px 20px}
+.lnk{font-size:14px;text-decoration:underline;text-underline-offset:4px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+nav img{height:58px;width:auto}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14px}
+nav ul a{text-decoration:none;color:var(--soft)}
+.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:50px;align-items:center;padding:56px 0 70px}
+.hero h1{font-size:clamp(46px,7vw,84px);margin-bottom:22px}
+.hero p.t{color:var(--soft);max-width:40ch;margin:0 0 28px}
+.hero .btns{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.hero figure{margin:0}.hero img{width:100%;aspect-ratio:1/1;object-fit:cover}
+figcaption{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--soft);margin-top:10px}
+.band{background:var(--alt);padding:18px 0}
+.band .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.band span{font:italic 500 18px "Cormorant Garamond",Georgia,serif;color:var(--wine)}
+section{padding:80px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+.head h2{font-size:clamp(34px,5vw,52px)}.head p{max-width:34ch;font-size:14px;color:var(--soft);margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:14px}
+.card .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.card h3{font-size:26px;margin:4px 0 4px}.card p{margin:0 0 12px;font-size:14px;color:var(--soft)}
+.card a{display:block;border-top:1px solid var(--line);padding-top:12px;font-size:13px;text-decoration:none}
+.bespoke{background:var(--alt)}
+.bespoke .w{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.bespoke img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.bespoke h2{font-size:clamp(36px,5vw,56px);margin-bottom:18px}
+.bespoke p{color:var(--soft);max-width:40ch}
+.bespoke ul{list-style:none;padding:0;margin:20px 0 28px;font-size:14px}
+.bespoke li{padding:4px 0}.bespoke li:before{content:"✦ ";color:var(--wine)}
+.welcome{text-align:center}
+.welcome h2{font-size:clamp(32px,4.5vw,48px);max-width:18em;margin:0 auto 18px}
+.welcome p{color:var(--soft);max-width:52ch;margin:0 auto 18px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.duo img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.duo h3{font-size:26px;margin:14px 0 2px}.duo p{margin:0;font-size:14px;color:var(--soft)}
+.duo .r{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.little{padding:0}
+.little .w{max-width:none;padding:0;display:grid;grid-template-columns:1fr 1fr;background:var(--alt)}
+.little img{width:100%;height:100%;min-height:380px;object-fit:cover}
+.little div.c{padding:60px 8%;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.little h2{font-size:clamp(34px,5vw,54px)}.little p{margin:0;color:var(--soft);max-width:38ch}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;border-top:1px solid var(--line);padding-top:30px}
+.steps b{font:italic 500 28px "Cormorant Garamond",Georgia,serif;color:var(--wine)}
+.steps h3{font-size:25px;margin:8px 0}.steps p{margin:0;font-size:14px;color:var(--soft)}
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.faq h2{font-size:clamp(36px,5vw,54px);margin-bottom:16px}
+details{border-top:1px solid var(--line);padding:20px 0}details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:500 21px "Cormorant Garamond",Georgia,serif;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";font-family:"DM Sans",sans-serif}
+details[open] summary:after{content:"–"}
+details p{margin:12px 0 0;color:var(--soft);font-size:14px;max-width:56ch}
+.msg{background:var(--wine);color:#fff;padding:80px 0}
+.msg .w{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.msg h2{font-size:clamp(38px,5.5vw,62px);margin-bottom:18px}
+.msg p{color:#e9cdd4;font-size:14px;max-width:38ch}
+.msg .eyebrow{color:#e9cdd4}
+.msg label{display:block;font-size:12px;margin:0 0 6px;color:#e9cdd4}
+.msg textarea{width:100%;min-height:150px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.3);color:#fff;font:inherit;font-size:14px;padding:14px;resize:vertical}
+.msg .btn{background:#fff;color:var(--wine);width:100%;text-align:center;margin-top:16px;border-color:#fff}
+.msg small{display:block;font-size:11px;color:#e9cdd4;margin-top:12px}
+footer{padding:50px 0 100px}
+footer .row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:110px;width:auto}footer .s{font-size:13px;color:var(--soft)}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--wine);color:#fff;text-decoration:none;padding:13px 20px;font-size:14px;font-weight:500;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+@media(max-width:860px){nav ul{display:none}.hero,.bespoke .w,.faq,.msg .w,.little .w{grid-template-columns:1fr}.hero{padding:36px 0}.cards,.steps,.duo{grid-template-columns:1fr}.head{flex-direction:column;align-items:start}.band .w{flex-direction:column}section{padding:56px 0}}
+</style>
+</head>
+<body>
+<div class="w">
+<nav>
+<a href="#top"><img src="images/logo.png" alt="By ElenaB"></a>
+<ul><li><a href="#cakes">Los pasteles</a></li><li><a href="#bespoke">A tu medida</a></li><li><a href="#order">Cómo pedir</a></li></ul>
+<a class="btn o" href="#" data-wa>Escríbenos</a>
+</nav>
+<header class="hero" id="top">
+<div>
+<p class="eyebrow">Un pastel. Una celebración. Un poquito de felicidad.</p>
+<h1>Para los momentos más <em>dulces</em> de la vida.</h1>
+<p class="t">Desde el pastel que luce en el centro de tu cumpleaños hasta una rebanada para saborear sin prisa. Descubre una forma más dulce de celebrar con byElenaB.</p>
+<div class="btns"><a class="btn" href="#" data-wa>Escríbenos</a><a class="lnk" href="#message">Imagina algo hecho para ti</a></div>
+</div>
+<figure><img src="images/plumeria-25-cake.jpg" alt="Pastel de cumpleaños cubierto de flores de plumeria rosas y amarillas"><figcaption><span>Del álbum de pasteles</span><span class="script">Flores, betún y un motivo para celebrar</span></figcaption></figure>
+</header>
+</div>
+<div class="band"><div class="w"><span>✦ Deseos de cumpleaños</span><span>✦ Antojitos porque sí</span><span>✦ Momentos que importan</span><span>✦ Tu propia idea dulce</span></div></div>
+
+<section id="cakes"><div class="w">
+<div class="head"><div><p class="eyebrow">La selección</p><h2>Amor a la primera rebanada.</h2></div><p>Algunas creaciones para despertar el antojo. Elige tu favorita y empecemos a platicar sobre tu pastel.</p></div>
+<div class="cards">
+<div class="card"><img src="images/strawberry-cake.jpg" alt="Pastel de chocolate coronado con fresas frescas"><div class="k">Frutal y alegre</div><h3>Fresas y chocolate</h3><p>Una corona generosa de fresas sobre chocolate.</p><a href="#" data-wa data-t="¡Hola byElenaB! Quiero preguntar por el pastel de fresas y chocolate.">Pregunta por este pastel →</a></div>
+<div class="card"><img src="images/key-lime-pie.jpg" alt="Pay de limón con merengue flameado"><div class="k">Un toque cítrico</div><h3>Pay de limón</h3><p>Una opción cítrica para una celebración diferente.</p><a href="#" data-wa data-t="¡Hola byElenaB! Quiero preguntar por el pay de limón.">Pregunta por este pastel →</a></div>
+<div class="card"><img src="images/ferrero-cake.jpg" alt="Pastel de chocolate con avellana y chocolates Ferrero"><div class="k">Para amantes del chocolate</div><h3>Pastel de chocolate Ferrero</h3><p>Chocolate, detalles dorados y un antojo bien merecido.</p><a href="#" data-wa data-t="¡Hola byElenaB! Quiero preguntar por el pastel de chocolate Ferrero.">Pregunta por este pastel →</a></div>
+</div></div></section>
+
+<section class="bespoke" id="bespoke"><div class="w">
+<img src="images/flower-28-cake.jpg" alt="Pastel con flores de betún hechas a mano y un número 28 dorado">
+<div><p class="eyebrow">Celebraciones a tu medida</p><h2>Tu ocasión. Tu imaginación. Tu pastel.</h2>
+<p>Un color favorito. Un número que significa algo. Una flor que se parezca a ti. Trae los detalles que hacen tuya tu celebración.</p>
+<ul><li>Ideas para cumpleaños y fechas especiales</li><li>Flores, paletas de color y detalles finales</li><li>Mensajes personales y temas divertidos</li></ul>
+<a class="btn" href="#" data-wa>Escríbenos</a></div>
+</div></section>
+
+<section class="welcome"><div class="w">
+<p class="eyebrow">Bienvenida a byElenaB</p>
+<h2>Para soplar las velitas, para reunirnos y para el “<em>otra rebanadita</em>, porfa”.</h2>
+<p>Bienvenida a un mundo de pasteles bonitos y pequeños placeres. Cada pastel se hornea por pedido en Monterrey, ya sea que tengas toda la celebración en mente o apenas el inicio de una idea.</p>
+<span class="script">Con un poquito de dulzura, byElenaB</span>
+</div></section>
+
+<section style="padding-top:0"><div class="w">
+<div class="head"><div><p class="eyebrow">Un toque divertido</p><h2>Hay ideas que merecen un pastel.</h2></div><p>Pasatiempos favoritos, formas inesperadas y mucha personalidad. La inspiración no tiene que ser ordinaria.</p></div>
+<div class="duo">
+<div><img src="images/soccer-ball-cake.jpg" alt="Pastel de balón de futbol con pasto de betún"><div class="r"><h3>Para el fan del futbol</h3><a class="lnk" href="#" data-wa data-t="¡Hola byElenaB! Quiero un pastel personalizado como el del balón.">Hazlo tuyo →</a></div><p>Tu deporte favorito, reinventado para la fiesta.</p></div>
+<div><img src="images/camel-bread.jpg" alt="Pastel en forma de camello con silla tejida sobre arena de galleta"><div class="r"><h3>Una forma de lo más inesperada</h3><a class="lnk" href="#" data-wa data-t="¡Hola byElenaB! Quiero un pastel personalizado como el del camello.">Hazlo tuyo →</a></div><p>Un camello de pastel con personalidad propia.</p></div>
+</div></div></section>
+
+<section class="little"><div class="w">
+<img src="images/berry-parfait.jpg" alt="Vasitos de crema con frutos rojos">
+<div class="c"><p class="eyebrow" style="margin:0">No todos los momentos necesitan velitas</p><h2>Pequeños placeres. Grandes sonrisas.</h2>
+<p>También hay lugar en la mesa para algo más pequeño. Deja que estos vasitos de frutos rojos te inspiren para cerrar tu reunión con algo dulce, o simplemente porque sí.</p>
+<a class="lnk" href="#" data-wa data-t="¡Hola byElenaB! Quiero preguntar por los postres individuales.">Pregunta por postres individuales →</a>
+<span class="script">Una cucharadita de felicidad.</span></div>
+</div></section>
+
+<section id="order"><div class="w">
+<div class="head"><h2>Empecemos por una plática.</h2><a class="lnk" href="#" data-wa>Escríbenos →</a></div>
+<div class="steps">
+<div><b>01</b><h3>Cuéntanos qué vas a celebrar</h3><p>Dinos la ocasión, la fecha que prefieres y cuántas personas serán, más o menos.</p></div>
+<div><b>02</b><h3>Trae tu inspiración</h3><p>Elige un pastel del álbum o compártenos colores, sabores e ideas que te gusten.</p></div>
+<div><b>03</b><h3>Confirmamos los detalles</h3><p>Confirmamos disponibilidad, diseño, tamaño, precio y si pasas por él o mandas un Uber o paquetería por tu cuenta. Tu fecha se aparta con el 50% de anticipo.</p></div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="w faq">
+<div><p class="eyebrow">Algunos datos útiles</p><h2>Antes de la primera rebanada.</h2><p style="color:var(--soft);font-size:14px;max-width:32ch">Algunas cosas a considerar al planear. ¿Otra duda? Escríbenos por WhatsApp y te ayudamos a empezar.</p></div>
+<div>
+<details open><summary>¿Con cuánta anticipación debo pedir?</summary><p>Recomendamos pedir con 3 a 5 días de anticipación. Si tu diseño es detallado, escríbenos lo antes posible; los tiempos y la entrega se confirman directamente contigo.</p></details>
+<details><summary>¿Puedo pedir un diseño personalizado?</summary><p>Sí. Mándanos una foto o cuéntanos la idea, con tus colores y el mensaje que quieras en el pastel.</p></details>
+<details><summary>¿Cómo elijo el tamaño del pastel?</summary><p>Dinos cuántas personas esperas y te sugerimos el tamaño ideal.</p></details>
+<details><summary>¿Puedo preguntar por alergias o necesidades especiales?</summary><p>Claro. Menciónalas en tu primer mensaje para decirte qué es posible.</p></details>
+<details><summary>¿Cómo se confirman el precio y la disponibilidad?</summary><p>Cuando sabemos tu fecha, tamaño y diseño, te mandamos la cotización por WhatsApp. La fecha se aparta con el 50% de anticipo.</p></details>
+<details><summary>¿Cómo es la entrega?</summary><p>Puedes recogerlo en Nuevo Sur; la ubicación te la compartimos por WhatsApp. Si prefieres, pide tu Uber, DiDi o servicio de paquetería para que pase por él. El envío corre por tu cuenta.</p></details>
+</div></div></section>
+
+<section class="msg" id="message"><div class="w">
+<div><p class="eyebrow">Aquí empieza algo bonito</p><h2>Cuéntanos tu idea dulce.</h2><p>Un cumpleaños, una reunión, o un pastel en el que no dejas de pensar. Mándanos tu fecha, porciones e ideas y te ayudamos a empezar.</p></div>
+<div><label for="m">Tu mensaje</label>
+<textarea id="m">¡Hola byElenaB! Busco un pastel para el [fecha] para [número] porciones. Me encantan [sabor / color / idea]. ¿Está disponible para recoger?</textarea>
+<a class="btn" href="#" id="send">Enviar por WhatsApp</a>
+<small>Un mensaje de WhatsApp no es la confirmación de un pedido. La disponibilidad, el diseño, el tamaño, el precio y la entrega se acuerdan antes de confirmarlo.</small></div>
+</div></section>
+
+<footer><div class="w"><div class="row"><img src="images/logo.png" alt="By ElenaB"><span class="script">Un poquito de dulzura hace mucho.</span><div class="s">Pasteles para celebrar · Monterrey, N.L. · @byelenab.bakes<br>© 2026 byElenaB</div></div></div></footer>
+<a class="wa" href="#" data-wa>¿Dudas? Escríbenos por WhatsApp</a>
+<script>
+var N="529613340423",D="¡Hola byElenaB! Quisiera preguntar por un pastel.";
+function u(t){return"https://wa.me/"+N+"?text="+encodeURIComponent(t||D)}
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href=u(a.dataset.t);a.target="_blank";a.rel="noopener"});
+var s=document.getElementById("send");s.target="_blank";s.rel="noopener";
+s.addEventListener("click",function(){s.href=u(document.getElementById("m").value)});
+</script>
+</body>
+</html>
