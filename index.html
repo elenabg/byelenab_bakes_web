@@ -101,6 +101,7 @@ footer img{height:110px;width:auto}footer .s{font-size:13px;color:var(--soft)}
 .tl i{display:block;height:22px;margin-bottom:30px;background:linear-gradient(135deg,transparent 50%,#e8920c 50%) 0 0/22px 22px,linear-gradient(225deg,transparent 50%,var(--wine) 50%) 11px 0/22px 22px}
 .tl span{display:block;font-size:13px;color:var(--soft)}.tl b{display:block;font:500 56px/1.1 "Cormorant Garamond",Georgia,serif;color:var(--wine);margin:6px 0}
 .tl em{font-size:14px}
+[hidden]{display:none!important}
 :root{--mar:#f7e6c8}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--mar:#3a2a22}}:root[data-theme="dark"]{--mar:#3a2a22}
 @media(max-width:860px){.pdm .w{grid-template-columns:1fr}}
 .pp{width:100%;aspect-ratio:4/3;object-fit:cover}
@@ -115,7 +116,7 @@ footer img{height:110px;width:auto}footer .s{font-size:13px;color:var(--soft)}
 <div class="w">
 <nav>
 <a href="#top"><img src="images/logo.png" alt="By ElenaB"></a>
-<ul><li><a href="#cakes">Los pasteles</a></li><li><a href="#bespoke">A tu medida</a></li><li><a href="eventos.html">Talleres</a></li><li><a href="#order">Cómo pedir</a></li></ul>
+<ul><li><a href="#cakes">Los pasteles</a></li><li><a href="#bespoke">A tu medida</a></li><li data-hasta="2026-10-31"><a href="eventos.html">Talleres</a></li><li><a href="#order">Cómo pedir</a></li></ul>
 <a class="btn o" href="#" data-wa>Escríbenos</a>
 </nav>
 <header class="hero" id="top">
@@ -140,11 +141,11 @@ footer img{height:110px;width:auto}footer .s{font-size:13px;color:var(--soft)}
 
 <section class="pdm" id="pan"><div class="w">
 <div><p class="eyebrow">Temporada de pan de muerto</p><h2>Pan de muerto, hecho a mano.</h2>
-<p class="d">Horneado por pedido para tu mesa de Día de Muertos. También puedes aprender a hacerlo en nuestros talleres de los sábados.</p>
+<p class="d">Horneado por pedido para tu mesa de Día de Muertos.<span data-hasta="2026-10-31"> También puedes aprender a hacerlo en nuestros talleres de los sábados.</span></p>
 <div class="row"><span>Pan de muerto tradicional</span><b>$35</b></div>
 <div class="row"><span>Pan de muerto relleno</span><b>$50</b></div>
-<div class="acts"><a class="btn" href="#" data-wa data-t="¡Hola byElenaB! Quiero hacer un pedido de pan de muerto.">Pedir pan</a><a class="lnk" href="eventos.html">Reserva tu taller →</a></div></div>
-<div><img class="pp" src="images/pan-de-muerto.jpg" alt="Pan de muerto tradicional con azúcar"><a class="tl" href="eventos.html"><i aria-hidden="true"></i><span>Taller de pan de muerto</span><b>$650</b><span>por persona · incluye comida y bebida</span><br><em>Sábado 31 de octubre · Reserva tu lugar →</em></a></div>
+<div class="acts"><a class="btn" href="#" data-wa data-t="¡Hola byElenaB! Quiero hacer un pedido de pan de muerto.">Pedir pan</a><a class="lnk" href="eventos.html" data-hasta="2026-10-31">Reserva tu taller →</a></div></div>
+<div><img class="pp" src="images/pan-de-muerto.jpg" alt="Pan de muerto tradicional con azúcar"><a class="tl" href="eventos.html" data-hasta="2026-10-31"><i aria-hidden="true"></i><span>Taller de pan de muerto</span><b>$650</b><span>por persona · incluye comida y bebida</span><br><em>Sábado 31 de octubre · Reserva tu lugar →</em></a></div>
 </div></section>
 
 <section class="bespoke" id="bespoke"><div class="w">
@@ -212,6 +213,17 @@ function u(t){return"https://wa.me/"+N+"?text="+encodeURIComponent(t||D)}
 document.querySelectorAll("[data-wa]").forEach(function(a){a.href=u(a.dataset.t);a.target="_blank";a.rel="noopener"});
 var s=document.getElementById("send");s.target="_blank";s.rel="noopener";
 s.addEventListener("click",function(){s.href=u(document.getElementById("m").value)});
+</script>
+<script>
+// Fechas que se quitan solas: lo que tenga data-hasta="AAAA-MM-DD" se oculta cuando ese día termina (hora de Monterrey).
+// Para probar otra fecha: agrega ?hoy=2026-11-01 a la dirección.
+(function(){
+var q=location.search.match(/[?&]hoy=(\d{4}-\d\d-\d\d)/),hoy=q?Date.parse(q[1]+"T12:00:00-06:00"):Date.now();
+document.querySelectorAll("[data-hasta]").forEach(function(e){if(hoy>Date.parse(e.dataset.hasta+"T23:59:59-06:00"))e.hidden=true});
+var quedan=document.querySelectorAll(".date:not([hidden])").length>0;
+document.querySelectorAll("[data-con-fechas]").forEach(function(e){e.hidden=!quedan});
+document.querySelectorAll("[data-sin-fechas]").forEach(function(e){e.hidden=quedan});
+})();
 </script>
 </body>
 </html>

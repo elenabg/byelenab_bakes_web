@@ -61,6 +61,7 @@ footer{padding:36px 0 100px;text-align:center;font-size:13px;color:var(--soft)}
 .wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--wine);color:#fff;text-decoration:none;padding:13px 20px;font-size:14px;font-weight:500;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 @media(max-width:820px){.hero,.two,.learn ul,.dates{grid-template-columns:1fr}.hero{padding:36px 0}section{padding:50px 0}}
 .pp{width:100%;aspect-ratio:4/3;object-fit:cover}
+[hidden]{display:none!important}
 </style>
 <link rel="canonical" href="https://byelenab.com/eventos">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_MX"><meta property="og:site_name" content="byElenaB">
@@ -86,7 +87,7 @@ footer{padding:36px 0 100px;text-align:center;font-size:13px;color:var(--soft)}
 <h2>Última fecha</h2>
 <p class="lead">Los lugares son limitados. Llena el formulario para reservar.</p>
 <div class="dates">
-<div class="date"><span class="m">Sábado · octubre</span><b>31</b><a class="btn" href="https://forms.gle/GMhYkqz47FAVqxUm9" target="_blank" rel="noopener">Reservar lugar</a></div>
+<div class="date" data-hasta="2026-10-31"><span class="m">Sábado · octubre</span><b>31</b><a class="btn" href="https://forms.gle/GMhYkqz47FAVqxUm9" target="_blank" rel="noopener">Reservar lugar</a></div>
 </div></div></section>
 
 <section class="learn"><div class="w">
@@ -122,6 +123,15 @@ footer{padding:36px 0 100px;text-align:center;font-size:13px;color:var(--soft)}
 var N="525526551200",D="¡Hola byElenaB! Quiero información del taller de pan de muerto.";
 function u(t){return"https://wa.me/"+N+"?text="+encodeURIComponent(t||D)}
 document.querySelectorAll("[data-wa]").forEach(function(a){a.href=u(a.dataset.t);a.target="_blank";a.rel="noopener"});
+</script>
+<script>
+// Fechas que se quitan solas: lo que tenga data-hasta="AAAA-MM-DD" se oculta cuando ese día termina (hora de Monterrey).
+// Si ya no queda ninguna fecha, esta página manda a la página de inicio. Para probar otra fecha: agrega ?hoy=2026-11-01 a la dirección.
+(function(){
+var q=location.search.match(/[?&]hoy=(\d{4}-\d\d-\d\d)/),hoy=q?Date.parse(q[1]+"T12:00:00-06:00"):Date.now();
+document.querySelectorAll("[data-hasta]").forEach(function(e){if(hoy>Date.parse(e.dataset.hasta+"T23:59:59-06:00"))e.hidden=true});
+if(!document.querySelector(".date:not([hidden])"))location.replace("/"+(q?q[0].replace("&","?"):""));
+})();
 </script>
 </body>
 </html>
